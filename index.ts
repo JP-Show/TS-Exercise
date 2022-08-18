@@ -134,3 +134,5 @@ console.log(fila.imprimir)
 console.log(fila.next())
 console.log(fila.next())
 console.log(fila.imprimir)
+fila.add = 'Lucas Henrique'
+console.log(fila.imprimir)
