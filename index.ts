@@ -136,3 +136,6 @@ console.log(fila.next())
 console.log(fila.imprimir)
 fila.add = 'Lucas Henrique'
 console.log(fila.imprimir)
+
+const market = new Fila<number>(1, 2, 3, 4)
+console.log(market.imprimir)
