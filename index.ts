@@ -139,3 +139,47 @@ console.log(fila.imprimir)
 
 const market = new Fila<number>(1, 2, 3, 4)
 console.log(market.imprimir)
+
+//Desafio Mapa
+//Array de Objetos (Chave/Valor) -> itens
+//Métodos: obter (Chave), colocar ({C, V})
+//limpar(), imprimir()
+
+interface people {
+  chave: number
+  valor: string
+}
+
+class Mapa {
+  private people: Array<people>
+
+  constructor(...args: people[]) {
+    this.people = args
+  }
+
+  public put(people: people) {
+    this.people.push(people)
+  }
+
+  get print(): object {
+    return this.people
+  }
+  public getKey(valor: number) {
+    const name = this.people.find(e => e.chave == valor)
+    return name
+  }
+  public limpar(valor: number): void {
+    const indexPosition = this.people.findIndex(e => e.chave == valor)
+    console.log(`A pessoa ${this.getKey(valor)?.valor} foi apagada`)
+    this.people.splice(indexPosition)
+  }
+}
+
+const mapa = new Mapa()
+mapa.put({ chave: 1, valor: 'André' })
+mapa.put({ chave: 2, valor: 'Ayumi' })
+console.log(mapa.getKey(2))
+console.log(mapa.print)
+
+mapa.limpar(2)
+console.log(mapa.print)
